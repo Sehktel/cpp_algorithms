@@ -1,3 +1,7 @@
+// ⚠️ LEGACY: Этот файл мигрирован в 02_networking/08_tcp_client_server/client.cpp
+// Этот файл сохранен для обратной совместимости и будет удален после завершения миграции.
+// Используйте новый путь: 02_networking/08_tcp_client_server/client.cpp
+
 /**
  * Ping-Pong Client
  * Учебный пример TCP клиента на C++

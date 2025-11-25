@@ -9,6 +9,10 @@
  * - RAII (Resource Acquisition Is Initialization) - автоматическое управление ресурсами
  */
 
+// ⚠️ LEGACY: Этот файл мигрирован в 01_cpp_fundamentals/07_file_io/01_basic_text_io.cpp
+// Этот файл сохранен для обратной совместимости и будет удален после завершения миграции.
+// Используйте новый путь: 01_cpp_fundamentals/07_file_io/01_basic_text_io.cpp
+
 #include <iostream>
 #include <fstream>
 #include <string>

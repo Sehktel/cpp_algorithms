@@ -1,3 +1,7 @@
+// ⚠️ LEGACY: Этот файл мигрирован в 01_cpp_fundamentals/07_file_io/08_stringstream_examples.cpp
+// Этот файл сохранен для обратной совместимости и будет удален после завершения миграции.
+// Используйте новый путь: 01_cpp_fundamentals/07_file_io/08_stringstream_examples.cpp
+
 /*
  * Лабораторная работа #8: Примеры использования stringstream
  * 
