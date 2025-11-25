@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+\geometry{a4paper, margin=1in}
+
+\lstset{
+    language=C++,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{white},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=false,
+    title=\lstname
+}
+
+\title{Сетевая передача файлов в C++: Теория и практика}
+\author{Кафедра системного программирования}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Введение в сетевое программирование}
+
+\subsection{Базовые концепции сокетов}
+
+Сокет представляет собой программный интерфейс для обмена данными между процессами, работающими на разных устройствах в сети. В контексте C++ сокеты являются абстракцией над низкоуровневыми сетевыми протоколами.
+
+\subsubsection{Типы сокетов}
+\begin{itemize}
+    \item \textbf{TCP (SOCK\_STREAM)}: Надежное, упорядоченное соединение
+    \item \textbf{UDP (SOCK\_DGRAM)}: Быстрая, но ненадежная передача данных
+\end{itemize}
+
+\subsection{Математическая модель передачи}
+
+Время передачи файла может быть описано следующей формулой:
+
+\begin{equation}
+T_{transfer} = \frac{S_{file}}{B_{network}}
+\end{equation}
+
+где:
+\begin{itemize}
+    \item $T_{transfer}$ - время передачи
+    \item $S_{file}$ - размер файла (байты)
+    \item $B_{network}$ - пропускная способность сети (байты/сек)
+\end{itemize}
+
+\section{Механизмы буферизации}
+
+\begin{lstlisting}[caption={Механизм буферной передачи файла}]
+const size_t BUFFER_SIZE = 4096;  // Оптимальный размер буфера
+
+void transfer_file_with_buffer(std::ifstream& input_file, int socket) {
+    char buffer[BUFFER_SIZE];
+    
+    while (!input_file.eof()) {
+        input_file.read(buffer, BUFFER_SIZE);
+        std::streamsize bytes_read = input_file.gcount();
+        
+        if (bytes_read > 0) {
+            send(socket, buffer, bytes_read, 0);
+        }
+    }
+}
+\end{lstlisting}
+
+\section{Сравнение размеров буфера}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Размер буфера & Преимущества & Недостатки \\
+\hline
+1 КБ & Низкое потребление памяти & Частые системные вызовы \\
+4 КБ & Баланс производительности & Умеренное использование памяти \\
+64 КБ & Высокая пропускная способность & Больше памяти, фрагментация \\
+\hline
+\end{tabular}
+\caption{Характеристики размеров буфера}
+\end{table}
+
+\section{Рекомендации по оптимизации}
+
+\begin{enumerate}
+    \item Использовать размер буфера, кратный размеру страницы памяти
+    \item Учитывать особенности сетевого стека ОС
+    \item Тестировать производительность на реальных данных
+\end{enumerate}
+
+\section{Заключение}
+
+Сетевая передача файлов - сложный процесс, требующий глубокого понимания:
+\begin{itemize}
+    \item Низкоуровневых механизмов операционной системы
+    \item Сетевых протоколов
+    \item Эффективного управления памятью
+\end{itemize}
+
+\section*{Рекомендуемая литература}
+\begin{itemize}
+    \item ``Unix Network Programming'' - W. Richard Stevens
+    \item ``TCP/IP Illustrated'' - W. Richard Stevens
+    \item ``Modern C++ Design'' - Andrei Alexandrescu
+\end{itemize}
+
+\end{document} 
