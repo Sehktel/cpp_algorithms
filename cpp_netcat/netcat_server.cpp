@@ -1,3 +1,7 @@
+// ⚠️ LEGACY: Этот файл мигрирован в 02_networking/08_tcp_client_server/netcat/netcat_server.cpp
+// Этот файл сохранен для обратной совместимости и будет удален после завершения миграции.
+// Используйте новый путь: 02_networking/08_tcp_client_server/netcat/netcat_server.cpp
+
 #include <iostream>
 #include <fstream>
 #include <string>

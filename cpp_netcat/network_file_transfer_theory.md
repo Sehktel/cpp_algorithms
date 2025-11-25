@@ -1,3 +1,7 @@
+<!-- ⚠️ LEGACY: Этот файл мигрирован в 02_networking/08_tcp_client_server/netcat/network_file_transfer_theory.md -->
+<!-- Этот файл сохранен для обратной совместимости и будет удален после завершения миграции. -->
+<!-- Используйте новый путь: 02_networking/08_tcp_client_server/netcat/network_file_transfer_theory.md -->
+
 # Теория сетевой передачи файлов в C++: Глубокое погружение
 
 ## 1. Введение в сетевое программирование

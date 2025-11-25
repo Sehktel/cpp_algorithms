@@ -1,3 +1,7 @@
+# ⚠️ LEGACY: Этот файл мигрирован в 02_networking/08_tcp_client_server/netcat/Makefile
+# Этот файл сохранен для обратной совместимости и будет удален после завершения миграции.
+# Используйте новый путь: 02_networking/08_tcp_client_server/netcat/Makefile
+
 # Компилятор и флаги
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -O2

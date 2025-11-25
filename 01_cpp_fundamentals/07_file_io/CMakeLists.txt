@@ -26,16 +26,10 @@ add_executable(01_basic_text_io 01_basic_text_io.cpp)
 add_executable(02_binary_io 02_binary_io.cpp)
 add_executable(03_error_handling 03_error_handling.cpp)
 add_executable(04_advanced_techniques 04_advanced_techniques.cpp)
-
-# Пинг-понг сервер и клиент
-add_executable(ping_pong_server ping_pong_server.cpp)
-add_executable(ping_pong_client ping_pong_client.cpp)
-
-# Настройка сетевых библиотек для Windows
-if(WIN32)
-    target_link_libraries(ping_pong_server ws2_32)
-    target_link_libraries(ping_pong_client ws2_32)
-endif()
+add_executable(05_stream_buffering 05_stream_buffering.cpp)
+add_executable(06_high_performance_io 06_high_performance_io.cpp)
+add_executable(07_advanced_error_handling 07_advanced_error_handling.cpp)
+add_executable(08_stringstream_examples 08_stringstream_examples.cpp)
 
 # Устанавливаем выходную директорию
 set_target_properties(
@@ -43,8 +37,10 @@ set_target_properties(
     02_binary_io
     03_error_handling
     04_advanced_techniques
-    ping_pong_server
-    ping_pong_client
+    05_stream_buffering
+    06_high_performance_io
+    07_advanced_error_handling
+    08_stringstream_examples
     PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )
@@ -96,8 +92,10 @@ message(STATUS "  - 01_basic_text_io")
 message(STATUS "  - 02_binary_io")
 message(STATUS "  - 03_error_handling")
 message(STATUS "  - 04_advanced_techniques")
-message(STATUS "  - ping_pong_server (ping-pong server)")
-message(STATUS "  - ping_pong_client (ping-pong client)")
+message(STATUS "  - 05_stream_buffering")
+message(STATUS "  - 06_high_performance_io")
+message(STATUS "  - 07_advanced_error_handling")
+message(STATUS "  - 08_stringstream_examples")
 message(STATUS "  - run_all (execute all labs)")
 message(STATUS "  - clean_data (remove generated files)")
 message(STATUS "===========================================")
