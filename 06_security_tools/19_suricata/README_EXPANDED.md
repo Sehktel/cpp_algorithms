@@ -49,3 +49,4 @@ alert tcp any any -> any 80 (msg:"HTTP Request"; content:"GET"; sid:1000001;)
 
 **Примечание:** Это расширенный материал. Основной README содержит структуру темы.
 
+

@@ -177,3 +177,4 @@ gpg --armor --export-secret-keys your-email@example.com > my_private_key.asc
 **Статус:** ✅ Материал создан  
 **Последнее обновление:** 2025
 
+

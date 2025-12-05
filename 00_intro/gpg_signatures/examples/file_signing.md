@@ -188,3 +188,4 @@ gpg --detach-sign --armor --comment "Release v1.0" release.tar.gz
 **Статус:** ✅ Материал создан  
 **Последнее обновление:** 2025
 
+

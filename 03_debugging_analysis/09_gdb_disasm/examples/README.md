@@ -55,3 +55,4 @@ g++ -g -fstack-protector -o buffer_overflow_safe buffer_overflow.cpp
 **Статус:** ✅ Базовые примеры созданы  
 **Последнее обновление:** 2025
 
+
